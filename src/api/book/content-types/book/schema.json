@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "singularName": "book",
+    "pluralName": "books",
+    "displayName": "Book"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "alias": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string"
+    },
+    "area": {
+      "type": "enumeration",
+      "enum": [
+        "chinese",
+        "korea",
+        "japan"
+      ]
+    },
+    "chapters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::chapter.chapter",
+      "mappedBy": "book"
+    },
+    "hits": {
+      "type": "biginteger"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "updating",
+        "completed"
+      ]
+    }
+  }
+}
