@@ -2,16 +2,16 @@ import path from 'path';
 import type { Core } from '@strapi/strapi';
 
 const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Database => {
-  const client = env('DATABASE_CLIENT', 'sqlite');
+  const client = env('DATABASE_CLIENT', 'mysql');
 
   const connections = {
     mysql: {
       connection: {
         host: env('DATABASE_HOST', 'localhost'),
         port: env.int('DATABASE_PORT', 3306),
-        database: env('DATABASE_NAME', 'strapi'),
-        user: env('DATABASE_USERNAME', 'strapi'),
-        password: env('DATABASE_PASSWORD', 'strapi'),
+        database: env('DATABASE_NAME', 'strapi_book'),
+        user: env('DATABASE_USERNAME', 'strapi_book'),
+        password: env('DATABASE_PASSWORD', 'SB6pFMeKm3aFFdei'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
